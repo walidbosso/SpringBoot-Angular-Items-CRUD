@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 class="text-center mt-5 mb-5">Update Item</h2>
+    <div class="card">
+        <div class="card-header">
+            <a class="btn btn-outline-info float-right" routerLink="/items/overview">All Items</a>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <!-- with ngModel we automaticlu update item.title then it is the data we will use to update db after we click the button and activate edit function-->
+                    <input type="text" class="form-control"
+                        [(ngModel)] = "item.title"
+                        name="title" id="title" />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea type="text" class="form-control"
+                        [(ngModel)] = "item.description"
+                        rows="4"
+                        name="description" id="description" >
+                    </textarea>
+                </div>
+                <button [disabled]="isSubmitting"
+                    (click)="editItem()"
+                    type="button"
+                    class="btn btn-outline-primary mt-3">
+                        Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

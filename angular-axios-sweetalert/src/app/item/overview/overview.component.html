@@ -1,0 +1,37 @@
+<div class="container">
+    <h2 class="text-center mt-f mb-3">
+        Items Overview
+    </h2>
+<div class="card">
+    <div class="card-header">
+        <a routerLink="/items/create"
+        class="btn btn-outline-primary float-right"
+        >Create Item</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- items is the one in ts  -->
+                <tr *ngFor="let item of items"> 
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <a [routerLink]="['/items',item._id,'details']" class="btn btn-outline-info mx-1">Details</a>
+                        <a [routerLink]="['/items',item._id,'edit']" class="btn btn-outline-success mx-1">Edit</a>
+                        <button (click)=" deleteItem(item._id)" class="btn btn-outline-danger mx-1">Delete</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>

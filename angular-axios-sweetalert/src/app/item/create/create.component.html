@@ -1,0 +1,39 @@
+<div class="container">
+    
+    
+    <h2 class="text-center mt-f mb-5">Create Item</h2>
+    <div class="card">
+        <div class="card-header">
+            <!-- if we know the link we type normally, if like delete a list we use [] -->
+            <a  class="btn btn-outline-info float-right" routerLink="/items/overview">All Items</a>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <!-- ngModel same name in ts -->
+                    <input                     
+                    [(ngModel)]="title"
+                    class="form-control"  
+                    type="text" name="title" id="title">
+                    <label for="description">Description</label>
+
+                    <textarea         
+                    rows="4"            
+                    [(ngModel)]="description"
+                    class="form-control"  
+                    type="description" name="description" id="description">
+                    
+                </textarea>
+                    <button [disabled]="isSubmitting"
+                    (click)="createItem()"
+                    type="button"
+                    class="btn btn-outline-primary mt-3">
+                    Submit       
+                             </button>
+                 </div>
+            </form>
+        </div>
+    </div>
+
+</div>
